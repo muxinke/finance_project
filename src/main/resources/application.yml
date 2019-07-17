@@ -10,4 +10,4 @@ spring:
 mybatis:
   type-aliases-package: com.qf.j1902.pojo
   mapper-locations: classpath:mapping/*.xml
-  #uu
+
