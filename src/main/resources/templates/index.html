@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>基本信息</title>
-    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+    <!-- <link rel="stylesheet" th:href="@{/layui/css/layui.css}"> -->
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
     <style>
         .layui-show {
             display: block !important;
@@ -30,10 +31,10 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">伴我汽车管理平台</div>
+        <div class="layui-logo">轻松贷 OA办公平台</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-right">
-            <li class="layui-nav-item">时间 &nbsp;&nbsp; <span>2019-6-28</span></li>
+            <li class="layui-nav-item">登陆时间 &nbsp;&nbsp; <span>2019-6-28</span></li>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <li class="layui-nav-item">所属角色&nbsp;&nbsp;&nbsp;&nbsp;<span>超级管理员</span></li>
             <li class="layui-nav-item">
@@ -50,76 +51,100 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item">
-                    <a data-url="membermanage" data-id="membermanage" data-title="会员管理" class="site-demo-active"
-                       href="javascript:" data-type="tabAdd">会员管理</a>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:">资讯管理</a>
+                    <a href="javascript:">客户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a data-url="http://10.12.159.126:9152" data-id="drafts" data-title="草稿箱" class="site-demo-active"
-                               href="javascript:"
-                               data-type="tabAdd">草稿箱</a></dd>
-                        <dd><a data-url="" data-id="auditinformation" data-title="资讯审核" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">资讯审核</a></dd>
-                        <dd><a data-url="" data-id="InformationRelease" data-title="资讯发布" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">资讯发布</a></dd>
-                        <dd><a data-url="" data-id="InformationList" data-title="资讯列表" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">资讯列表</a></dd>
+                        <dd><a data-url="/customer/customer-info" data-id="customer-info" data-title="客户信息" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">客户信息</a></dd>
+                        <dd><a data-url="/customer/The-loan-info" data-id="The-loan-info" data-title="用户贷款信息" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">贷款信息</a></dd>
+                        <dd><a data-url="/customer/Investment-info" data-id="Investment-info" data-title="用户投资信息" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">投资信息</a></dd>
+                        <dd><a data-url="/customer/blacklist" data-id="blacklist" data-title="黑名单" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">黑名单</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a data-url="" data-id="tagsDefined" data-title="标签定义"
-                                              class="site-demo-active" href="javascript:" data-type="tabAdd">标签定义</a>
-                </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:">车型库管理</a>
+                    <a href="javascript:">贷款审批</a>
                     <dl class="layui-nav-child">
-                        <dd><a data-url="" data-id="brandManagement" data-title="品牌管理" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">品牌管理</a></dd>
-                        <dd><a data-url="" data-id="vendorManagement" data-title="厂商管理" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">厂商管理</a></dd>
-                        <dd><a data-url="" data-id="brandManagement" data-title="车系管理" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">车系管理</a></dd>
-                        <dd><a data-url="" data-id="managementModels" data-title="车款管理" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">车款管理</a></dd>
-                        <dd><a data-url="" data-id="parameterClassManagement" data-title="参数分类管理"
-                               class="site-demo-active" href="javascript:" data-type="tabAdd">参数分类管理</a></dd>
-                        <dd><a data-url="" data-id="parameterManage" data-title="参数管理" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">参数管理</a></dd>
+                        <dd><a data-url="/loan-approval/micro-finance" data-id="micro-finance" data-title="小额贷款" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">小额贷款</a></dd>
+                        <dd><a data-url="/loan-approval/Large-loans" data-id="Large loans" data-title="大额贷款" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">大额贷款</a></dd>
+                        <dd><a data-url="/loan-approval/Investment-bidding" data-id="Investment-bidding" data-title="投资招标" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">投资招标</a></dd>
+                        <dd><a data-url="/loan-approval/automatic-approval" data-id="automatic-approval" data-title="自动审批管理" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">自动审批管理</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a data-url="" data-id="commodityManage" data-title="自有商品管理"
-                                              class="site-demo-active" href="javascript:" data-type="tabAdd">自有商品管理</a>
-                </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:">活动管理</a>
+                    <a href="javascript:">放款管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a data-url="http://10.12.159.122:10004/layout-1.html" data-id="listOfActivities" data-title="活动列表" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">活动列表</a></dd>
-                        <dd><a data-url="" data-id="recommendedActivities" data-title="推荐活动" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">推荐活动</a></dd>
-                        <dd><a data-url="" data-id="typeManagement" data-title="类型管理" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">类型管理</a></dd>
-                        <dd><a data-url="" data-id="channelManage" data-title="渠道管理" class="site-demo-active"
-                               href="javascript:" data-type="tabAdd">渠道管理</a></dd>
+                        <dd><a data-url="/loan-manage/interest-rate-manage" data-id="interest-rate-manage" data-title="利率管理" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">利率管理</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a data-url="" data-id="messageManage" data-title="消息管理"
-                                              class="site-demo-active" href="javascript:" data-type="tabAdd">消息管理</a>
+                <li class="layui-nav-item">
+                    <a href="javascript:">贷后管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a data-url="/postman-manage/payment-manage" data-id="payment-manage" data-title="还款管理" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">还款管理</a></dd>
+                         <dd><a data-url="/postman-manage/notifications" data-id="notifications" data-title="信息通知" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">信息通知</a></dd>
+                         <dd><a data-url="/postman-manage/payment-info" data-id="payment-info" data-title="还款信息" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">还款信息</a></dd>
+                    </dl>
                 </li>
-                <li class="layui-nav-item"><a data-url="labelManage" data-id="labelManage" data-title="标签管理"
-                                              class="site-demo-active" href="javascript:" data-type="tabAdd">标签管理</a>
+                <li class="layui-nav-item">
+                    <a href="javascript:">问卷管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a data-url="/questionnaire/Loans-questionnaire" data-id="Loans-questionnaire" data-title="贷款问卷" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">贷款问卷</a></dd>
+                         <dd><a data-url="/questionnaire/Financial-questionnaire" data-id="Financial-questionnaire" data-title="理财问卷" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">理财问卷</a></dd>
+                    </dl>
                 </li>
-                <li class="layui-nav-item"><a data-url="" data-id="roleManage" data-title="角色管理"
-                                              class="site-demo-active" href="javascript:" data-type="tabAdd">角色管理</a>
+                <li class="layui-nav-item"><a data-url="/Order-tracking" data-id="Order-tracking" data-title="订单跟踪"
+                        class="site-demo-active" href="javascript:" data-type="tabAdd">订单跟踪</a>
                 </li>
-                <li class="layui-nav-item"><a data-url="" data-id="adminList" data-title="管理员列表"
-                                              class="site-demo-active" href="javascript:" data-type="tabAdd">管理员列表</a>
+                <li class="layui-nav-item">
+                    <a href="javascript:">投资理财管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a data-url="/Investment-financial/platform-products-list" data-id="platform-products-list" data-title="平台产品列表" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">平台产品列表</a></dd>
+                    </dl>
                 </li>
-                <li class="layui-nav-item"><a data-url="" data-id="operationLog" data-title="操作日志"
-                                              class="site-demo-active" href="javascript:" data-type="tabAdd">操作日志</a>
+                <li class="layui-nav-item">
+                    <a href="javascript:">运营数据</a>
+                    <dl class="layui-nav-child">
+                        <dd><a data-url="/Operational-data/Real-time-data" data-id="Real-time-data" data-title="实时数据" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">实时数据</a></dd>
+                        <dd><a data-url="/Operational-data/Run-reports" data-id="Run-reports" data-title="运营报告" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">运营报告</a></dd>
+                    </dl>
                 </li>
-                <li class="layui-nav-item"><a data-url="个人中心.html" data-id="personalCenter" data-title="个人中心"
-                                              class="site-demo-active" href="javascript:" data-type="tabAdd">个人中心</a>
+                <li class="layui-nav-item">
+                    <a href="javascript:">关于我们</a>
+                    <dl class="layui-nav-child">
+                        <dd><a data-url="/About-us/Company-profile" data-id="Company-profile" data-title="公司简介" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">公司简介</a></dd>
+                        <dd><a data-url="/About-us/Platform-qualification" data-id="Platform-qualification" data-title="平台资质" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">平台资质</a></dd>
+                        <dd><a data-url="/About-us/Contacts" data-id="Contacts" data-title="联系我们" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">联系我们</a></dd>
+                        <dd><a data-url="/About-us/Announcement" data-id="Announcement" data-title="平台公告" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">平台公告</a></dd>
+                        <dd><a data-url="/About-us/recruiting" data-id="recruiting" data-title="招贤纳士" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">招贤纳士</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:">职工管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a data-url="/worker-manage/Role-manage" data-id="Role-manage" data-title="角色管理" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">角色管理</a></dd>
+                        <dd><a data-url="/worker-manage/Rights-manage" data-id="Rights-manage" data-title="权限管理" class="site-demo-active"
+                               href="javascript:" data-type="tabAdd">权限管理</a></dd>
+                    </dl>
                 </li>
             </ul>
         </div>
@@ -133,7 +158,7 @@
             <div class="layui-tab-content" style="height: auto;">
                 <div class="layui-tab-item layui-show">
                     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
-                        <legend>欢迎 - 伴我汽车管理平台</legend>
+                        <legend>欢迎 - 轻松贷 OA平台</legend>
                     </fieldset>
                     <blockquote class="layui-elem-quote">嘻嘻</blockquote>
                 </div>
@@ -142,10 +167,12 @@
     </div>
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        © j1902.qf.com - 伴我汽车
+        ? com.easy.credit.com - 轻松贷
     </div>
-</div>
-<script th:src="@{/layui/layui.js}"></script>
-<script th:src="@{/js/index.js}"></script>
+</div>  
+<!-- <script th:src="@{/layui/layui.js}"></script>
+<script th:src="@{/js/index.js}"></script> -->
+<script src="../static/layui/layui.js"></script>
+<script src="../static/js/index.js"></script>
 </body>
 </html>
