@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="css/layui.css">
+</head>
+<style>
+
+</style>
+<body>
+<img id="img1" src="picture/4.png"/><br/><br/>
+<div class="layui-collapse" lay-accordion>
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title">申请审核中(预计需要1-3个工作日)</h2>
+        <div class="layui-colla-content layui-show">
+            <div id="date1"></div>
+            您可能会收到审核电话,请注意保持电话畅通。
+            审核人员不会向您收取任何费用,请小心电话诈骗。<br/>
+            感谢您的耐心等待!
+        </div>
+    </div>
+
+</div>
+<img id="img2" src="picture/pig.jpg" style="margin-left: 30px;margin-top: 20px;width: 200px;height: 200px"/>
+
+<script src="layui.js"></script>
+<script>
+    layui.use(['element','form', 'layedit', 'laydate'], function(){
+        var element = layui.element;
+        var form = lay.form;
+        var layer = layui.layer;
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#date1',
+            type: 'datetime',
+            value: new Date()
+        });
+        //…
+    });
+</script>
+</body>
+</html>
+

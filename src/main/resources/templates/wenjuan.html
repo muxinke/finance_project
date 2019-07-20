@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="css/layui.css">
+</head>
+<style>
+
+</style>
+<body>
+<button class="layui-btn layui-btn-lg" lay-submit lay-filter="formDemo">贷款额度</button><div style="margin-left: 150px;margin-top: -30px">[您的测评结果为 : xx型]</div>
+<div style="margin-top: 30px;margin-left: 50px;width: 1000px">
+<h2>尊敬的客户：</h2>
+为了便于您了解自身的还款能力，为您选择合适的贷款额度，请您填写以下评估问卷，本交易中心承诺对您的所有个人资料保密。 请回答所有的问题，并选中各题最合适的答案。我们将根据您的加总分评估您的还款能力，从而评估出你暂时的贷款额度。为了及时了解您的还款能力，我们建议您定期评估。
+    <h3 style="color: red">特别说明：您需符合以下两项前提条件，方可申请贷款：（1）年满18周岁；（2）有固定收入。</h3>
+</div>
+<div style="margin-top: 30px;margin-left: 50px;width: 1010px;height:800px;border: solid;border-color: #009688">
+    <div style="float:left;margin-top: 10px;margin-left: 10px;width: 320px;height:250px;border: solid 1px;border-color: #009688">
+        <div class="layui-card">
+            <div class="layui-card-header" style="background-color: #009688"><h3 style="color: #ffffff">1.您的年龄是</h3></div>
+            <div class="layui-card-body">
+                    <div class="layui-input-block" style="margin-left: 8px">
+                        <input type="radio" name="sex" value="18-26岁" ><span>18-26岁</span><br/>
+                        <input type="radio" name="sex" value="27-44岁" ><span>27-44岁</span><br/>
+                        <input type="radio" name="sex" value="45-60岁" ><span>45-60岁</span><br/>
+                        <input type="radio" name="sex" value="61岁以上" ><span>61岁以上</span><br/>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="float:left;margin-top: 10px;margin-left: 10px;width: 320px;height:250px;border: solid 1px;border-color: #009688">
+
+    </div>
+    <div style="float:left;margin-top: 10px;margin-left: 10px;width: 320px;height:250px;border: solid 1px;border-color: #009688">
+
+    </div>
+    <div style="float:left;margin-top: 10px;margin-left: 10px;width: 320px;height:250px;border: solid 1px;border-color: #009688">
+
+    </div>
+    <div style="float:left;margin-top: 10px;margin-left: 10px;width: 320px;height:250px;border: solid 1px;border-color: #009688">
+
+    </div>
+    <div style="float:left;margin-top: 10px;margin-left: 10px;width: 320px;height:250px;border: solid 1px;border-color: #009688">
+
+    </div>
+    <div style="float:left;margin-top: 10px;margin-left: 10px;width: 320px;height:250px;border: solid 1px;border-color: #009688">
+
+    </div>
+
+</div>
+<button style="margin-left: 480px;margin-top: 5px" class="layui-btn" lay-submit lay-filter="formDemo">确认提交</button>
+<script src="layui.js"></script>
+<script>
+    layui.use(['element','form', 'layedit', 'laydate'], function(){
+        var element = layui.element;
+        var form = lay.form;
+        var layer = layui.layer;
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#date1',
+            type: 'datetime',
+            value: new Date()
+        });
+        //…
+    });
+</script>
+</body>
+</html>
+

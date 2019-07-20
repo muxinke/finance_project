@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>小额借款</title>
+    <link rel="stylesheet" href="css/layui.css"/>
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_1305052_77tleuf0yqo.css"/>
+</head>
+<body class="layui-layout-body" style="overflow-y:scroll;">
+<div class="layui-collapse" lay-filter="test" style="width:500px; position:relative; left:400px">
+  <div class="layui-colla-item site-demo-active"  data-type="setPercent">
+    <h2 class="layui-colla-title">可用余额</h2>
+    <div class="layui-colla-content">
+			<h6>您的可用余额为：<span>2000</span>￥</h6>
+			<div style="margin-top: 15px; width:300px">
+			  <div class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="demo">
+				<div class="layui-progress-bar layui-bg-cyan" lay-percent=""></div>
+				</div>
+			</div>
+    </div>
+  </div>
+  </div >
+  <div style="width:500px; position:relative; left:400px">
+  
+  <form class="layui-form " action="#" lay-filter="demo1">
+   <div class="layui-form-item" >
+    <label class="layui-form-label">请输入您的借款金额:</label></br>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="required" lay-reqtext="输入金额是必填项，岂能为空？" autocomplete="off" placeholder="请输入金额" class="layui-input">
+    </div>
+  </div>
+   <div class="layui-form-item">
+    <label class="layui-form-label">借多久</label>
+    <div class="layui-input-block">
+      <select name="qixian" lay-filter="qixian">
+        <option value="3">3个月</option>
+        <option value="6">6个月</option>
+        <option value="12" selected="">12个月</option>
+        <option value="18">18个月</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">怎么还</label>
+    <div class="layui-input-block">
+      <select name="fangshi" lay-filter="fangshi">
+        <option value="每月等额">每月等额（每月还款金额相同）</option>
+        <option value="先息后本">先息后本（先还利息，到期还本金）</option>
+    
+      </select>
+    </div>
+	<div class="layui-form-item">
+	 <label class="layui-form-label">还款计划</label>
+	 <div  class="site-demo-button" id="layerDemo">
+	 <button data-method="notice" type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-top:10px">首期8月3日<span style="color:blue">应还4.12元</span><i class="layui-icon"></i></button>
+	 </div>
+  </div>
+   <div class="layui-form-item">
+   <label class="layui-form-label">收款账户</br><span style="font-size:5px;color:red">即时到账</span></label>
+   <div class="layui-input-block">
+       <input type="radio" name="card" value="个人日常消费" title="本地账户" checked="">
+      <input type="radio" name="card" value="中国银行4567" title="中国银行4567">
+      <input type="radio" name="card" value="中国农业银行2345" title="中国农业银行2345">
+      <input type="radio" name="card" value="中国工商银行1234" title="中国工商银行1234">
+      <input type="radio" name="card" value="中国建设银行6789" title="中国建设银行6789">
+    </div>
+   </div>
+   <div class="layui-form-item">
+   <label class="layui-form-label">借款用途</br></label>
+   <div class="layui-input-block">
+	 <input type="radio" name="yongtu" value="个人日常消费" title="个人日常消费" checked="">
+      <input type="radio" name="yongtu" value="装修" title="装修">
+      <input type="radio" name="yongtu" value="旅游" title="旅游">
+      <input type="radio" name="yongtu" value="教育" title="教育">
+      <input type="radio" name="yongtu" value="医疗" title="医疗">
+   </div>
+   </div>
+   <div class="layui-form-item">
+   <label class="layui-form-label">放款机构</br></label>
+   <div class="layui-input-block">
+	<input type="text" name="jigou" lay-verify="title" autocomplete="off" value="西安银行" class="layui-input" readonly>
+   </div>
+   </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">贷款协议</label>
+    <div class="layui-input-block">
+     <input type="checkbox"  name="open" lay-skin="switch" lay-filter="switchTest" lay-text="同意|不同意" ><br>
+	  <a  href="http://www.baidu.com">本人已阅读并同意签署<font style="color:blue">《个人消费贷款合同》</font>、<font style="color:blue">《个人信用报告查询授权书》</font>，<font>同意报送</font>贷款相关信息至金融信息信息基础
+	  数据库<font>人行征信系统</font></a>
+    </div>
+  </div>
+   <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+    </div>
+  </div>
+  </form>
+  </div>
+  
+  
+  <div id="aa" style="display:none">
+  <div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><ul class="layui-timeline">
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis"></i>
+    <div class="layui-timeline-content layui-text">
+      <div class="layui-timeline-title">2018年，layui 5.0 发布。并发展成为中国最受欢迎的前端UI框架（期望）</div>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis"></i>
+    <div class="layui-timeline-content layui-text">
+      <div class="layui-timeline-title">2017年，layui 里程碑版本 2.0 发布</div>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis"></i>
+    <div class="layui-timeline-content layui-text">
+      <div class="layui-timeline-title">2016年，layui 首个版本发布</div>
+    </div>
+  </li>
+  <li class="layui-timeline-item">
+    <i class="layui-icon layui-timeline-axis"></i>
+    <div class="layui-timeline-content layui-text">
+      <div class="layui-timeline-title">2015年，layui 孵化</div>
+    </div>
+  </li>
+  
+</ul></div></div>
+<script src="layui.js"></script>
+<script>
+    //JavaScript代码区域	
+		layui.use(['element', 'layer','form'], function(){
+		  var $ = layui.jquery
+		  ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+		   var layer = layui.layer;
+		   var form = layui.form;
+  
+  //触发事件
+  var active = {
+    setPercent: function(){
+      //设置50%进度
+      element.progress('demo', '50%')
+    }
+	,notice: function(){
+      //示范一个公告层
+      layer.open({
+        type: 1
+        ,title: false //不显示标题栏
+        ,closeBtn: false
+        ,area: '300px;'
+        ,shade: 0.8
+        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+        ,btn: ['确认']
+        ,btnAlign: 'c'
+        ,moveType: 1 //拖拽模式，0或者1
+        ,content: $("#aa").html()
+        /*,success: function(layero){
+          var btn = layero.find('.layui-layer-btn');
+          btn.find('.layui-layer-btn0').attr({
+            href: 'http://www.layui.com/'
+            ,target: '_blank'
+          });
+        }*/
+      });
+    }
+  };
+  form.on('submit(demo1)', function(data){
+	if(escape(JSON.stringify(data.field)).indexOf("open")>0){
+	layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+	return true;
+	}
+    return false;
+  });
+  form.on('switch(switchTest)', function(data){
+		  if((this.checked ? 'true' : 'false')=='true'){
+		  
+		  layer.tips("您已经同意贷款协议，请遵从贷款条约，按时还款", data.othis)
+		  }
+    
+  });
+  $('.site-demo-active').on('click', function(){
+    var othis = $(this), type = $(this).data('type');
+    active[type] ? active[type].call(this, othis) : '';
+  });
+   $('#layerDemo .layui-btn').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+
+		
+});
+   
+</script>
+</body>
+</html>

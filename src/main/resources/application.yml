@@ -7,7 +7,10 @@ spring:
     url: jdbc:mysql://localhost:3306/zhongchou?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
     username: root
     password:
+  thymeleaf:
+    cache: false
 mybatis:
   type-aliases-package: com.qf.j1902.pojo
   mapper-locations: classpath:mapping/*.xml
-
+#logging:
+ # config: classpath:log4j2.xml

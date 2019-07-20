@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="css/layui.css">
+</head>
+<style>
+    #table_wrap > table {
+        font-size: 16px;
+        text-align: center;
+        margin: 0 auto;
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 2px #000;
+    }
+
+    table thead tr,table tbody tr {
+        height: 50px;
+        line-height: 50px;
+    }
+    table tr th:first-child,table tr td:first-child {/*设置table左边边框*/
+        border-left: 2px solid #eaeaea;
+    }
+    table tr th:last-child,table tr td:last-child {/*设置table右边边框*/
+        border-right: 2px solid #eaeaea;
+    }
+    table tr td:first-child,
+    table tr td:nth-child(2),
+    table tr td:nth-child(3),
+    table tr td:last-child{/*设置table表格每列底部边框*/
+        border-bottom: 2px solid #eaeaea;
+    }
+    table tr th {
+        background: #eaeaea;
+    }
+    table tr:first-child th:first-child {
+        border-top-left-radius: 12px;
+    }
+
+    table tr:first-child th:last-child {
+        border-top-right-radius: 12px;
+    }
+    table tr:last-child td:first-child {
+        border-bottom-left-radius: 12px;
+    }
+
+    table tr:last-child td:last-child {
+        border-bottom-right-radius: 12px;
+    }
+</style>
+<body>
+<img id="img1" src="picture/3.png"/><br/><br/><br/>
+<div id="table_wrap">
+<table class="layui-table" style="margin-top: 30px;margin-left: 30px;width: 200px">
+    <colgroup>
+        <col width="150">
+        <col width="200">
+        <col>
+    </colgroup>
+    <thead>
+    <tr>
+        <th >贷款信息如下</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>姓名:<span>xxx</span></td>
+    </tr>
+    <tr>
+        <td>借款金额:<span>xxx</span></td>
+    </tr>
+    <tr>
+        <td>每期还款:<span>xxx</span></td>
+    </tr>
+    <tr>
+        <td>还款期数:<span>xxx</span></td>
+    </tr>
+    </tbody>
+</table>
+    <br/>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">确认提交</button>
+        </div>
+    </div>
+</div>
+<script src="layui.js"></script>
+<script>
+    layui.use(['element','form', 'layedit', 'laydate'], function(){
+        var element = layui.element;
+        var form = lay.form;
+        var layer = layui.layer;
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#date1',
+            type: 'datetime',
+            value: new Date()
+        });
+        //…
+    });
+</script>
+</body>
+</html>
+

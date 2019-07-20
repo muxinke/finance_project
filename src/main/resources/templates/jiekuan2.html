@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="css/layui.css">
+</head>
+<style>
+
+</style>
+<body>
+<img id="img1" src="picture/2.png"/><br/><br/><br/>
+
+<form class="layui-form" action="jiekuan3" method="post">
+    <div class="layui-form-item">
+        <label class="layui-form-label">身份证正面:</label>
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn" id="test1">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <img id="img2" src="picture/pig.jpg" style="margin-left: 30px;margin-top: 20px;width: 200px;height: 200px"/>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">身份证背面:</label>
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn" id="test2">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <img id="img3" src="picture/pig.jpg" style="margin-left: 30px;margin-top: 20px;width: 200px;height: 200px"/>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">银行卡照片:</label>
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn" id="test3">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <img id="img4" src="picture/pig.jpg" style="margin-left: 30px;margin-top: 20px;width: 200px;height: 200px"/>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">下一步</button>
+        </div>
+    </div>
+</form>
+
+<script src="layui.js"></script>
+<script>
+    layui.use(['element','form', 'layedit', 'laydate','upload'], function(){
+        var element = layui.element;
+        var upload = layui.upload;
+        var form = lay.form;
+        var layer = layui.layer;
+        var laydate = layui.laydate;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test1,#test2,#test3' //绑定元素
+            ,url: '/upload/' //上传接口
+            ,done: function(res){
+                //上传完毕回调
+            }
+            ,error: function(){
+                //请求异常回调
+            }
+        });
+
+        //…
+    });
+</script>
+</body>
+</html>
+
